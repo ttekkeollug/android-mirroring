@@ -27,8 +27,12 @@ brew install scrcpy android-platform-tools
 
 Mac 키보드가 휴대폰에 **실제 블루투스 키보드처럼** 연결됩니다 (`--keyboard=uhid`).
 한글 입력, Ctrl/Option 조합, 방향키 모두 휴대폰으로 그대로 전달됩니다.
-Mac에서 평소처럼 한/영을 바꾸면 (Caps Lock, Ctrl+Space 등) 휴대폰도 같이 전환됩니다.
-`hangul` helper가 Mac 입력 소스 변경을 감지해 휴대폰에 언어 전환 키를 보냅니다 (소스: `hangul.swift`).
+미러링 창에서 **한/영 키(Caps Lock)** 를 누르면 휴대폰 키보드의 한/영이 전환됩니다.
+Ctrl+Space처럼 Mac 입력 소스를 바꾸는 단축키도 휴대폰에 같이 적용됩니다.
+(macOS는 미러링 창 안에서 Caps Lock 한/영 전환을 하지 않기 때문에, `hangul` helper가 키를 가로채 휴대폰에 언어 전환 키를 보냅니다. 소스: `hangul.swift`)
+
+> 처음 실행하면 **손쉬운 사용** 권한을 요청합니다. 시스템 설정 → 개인정보 보호 및 보안 → 손쉬운 사용에서 Android Mirroring을 켜세요.
+> 앱을 새 버전으로 바꾸면 권한을 다시 켜야 할 수 있습니다.
 
 `Cmd`는 미러링 단축키 전용입니다:
 
