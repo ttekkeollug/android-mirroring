@@ -27,7 +27,8 @@ brew install scrcpy android-platform-tools
 
 Mac 키보드가 휴대폰에 **실제 블루투스 키보드처럼** 연결됩니다 (`--keyboard=uhid`).
 한글 입력, Ctrl/Option 조합, 방향키 모두 휴대폰으로 그대로 전달됩니다.
-한/영 전환은 휴대폰 키보드 설정을 따릅니다 (삼성 키보드: `Shift+Space`).
+Mac에서 평소처럼 한/영을 바꾸면 (Caps Lock, Ctrl+Space 등) 휴대폰도 같이 전환됩니다.
+`hangul` helper가 Mac 입력 소스 변경을 감지해 휴대폰에 언어 전환 키를 보냅니다 (소스: `hangul.swift`).
 
 `Cmd`는 미러링 단축키 전용입니다:
 
