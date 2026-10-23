@@ -1,7 +1,8 @@
 #!/bin/bash
 # GUI apps don't inherit the shell PATH
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
-err=$(scrcpy --window-title "Android Mirroring" --turn-screen-off --stay-awake 2>&1 >/dev/null) ||
+err=$(scrcpy --window-title "Android Mirroring" --turn-screen-off --stay-awake \
+  --keyboard=uhid --shortcut-mod=lsuper,rsuper 2>&1 >/dev/null) ||
   osascript -e 'on run a' -e 'display alert "Android Mirroring" message (item 1 of a)' -e 'end run' \
     "휴대폰 연결 실패. USB 디버깅/무선 디버깅을 켜고 'adb devices'를 확인하세요.
 

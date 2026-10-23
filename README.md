@@ -22,3 +22,29 @@ brew install scrcpy android-platform-tools
 - **무선**: 개발자 옵션 → 무선 디버깅 → `adb pair <IP:포트>` 후 `adb connect <IP:포트>`
 
 `adb devices`에 기기가 보이면 앱을 실행하세요.
+
+## 키보드와 단축키
+
+Mac 키보드가 휴대폰에 **실제 블루투스 키보드처럼** 연결됩니다 (`--keyboard=uhid`).
+한글 입력, Ctrl/Option 조합, 방향키 모두 휴대폰으로 그대로 전달됩니다.
+한/영 전환은 휴대폰 키보드 설정을 따릅니다 (삼성 키보드: `Shift+Space`).
+
+`Cmd`는 미러링 단축키 전용입니다:
+
+| 단축키 | 동작 |
+|---|---|
+| `Cmd+H` | 홈 |
+| `Cmd+B` / 우클릭 | 뒤로 |
+| `Cmd+S` | 최근 앱 |
+| `Cmd+M` | 메뉴 |
+| `Cmd+C` / `Cmd+X` | 휴대폰에서 복사/잘라내기 (Mac 클립보드와 동기화) |
+| `Cmd+V` | Mac 클립보드 붙여넣기 |
+| `Cmd+↑` / `Cmd+↓` | 볼륨 |
+| `Cmd+P` | 전원 |
+| `Cmd+O` / `Cmd+Shift+O` | 휴대폰 화면 끄기/켜기 |
+| `Cmd+R` | 화면 회전 |
+| `Cmd+F` | 전체 화면 |
+| `Cmd+N` / `Cmd+Shift+N` | 알림창 열기/닫기 |
+| `Cmd+K` | 휴대폰의 물리 키보드 설정 열기 (자판 배열 설정) |
+
+전체 목록: [scrcpy shortcuts](https://github.com/Genymobile/scrcpy/blob/master/doc/shortcuts.md)
