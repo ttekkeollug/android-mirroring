@@ -5,17 +5,7 @@
 	<key>files</key>
 	<dict/>
 	<key>files2</key>
-	<dict>
-		<key>MacOS/hangul</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			txkc3EGw2/fD8GQ7j+sY0/UfIX0=
-			</data>
-			<key>requirement</key>
-			<string>cdhash H"b7191cdc41b0dbf7c3f0643b8feb18d3f51f217d" or cdhash H"b03a34f042fbefa8f160c781bc1e84758c1cd624"</string>
-		</dict>
-	</dict>
+	<dict/>
 	<key>rules</key>
 	<dict>
 		<key>^Resources/</key>
