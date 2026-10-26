@@ -31,6 +31,7 @@ final class Mirror {
     var pid: pid_t = 0
     var stopping = false
     var bar: NSPanel?
+    var volume: String?  // 미러링 전 휴대폰 미디어 볼륨, 끝나면 되돌린다
     init(_ device: Device) { self.device = device }
 }
 
@@ -63,6 +64,8 @@ func listDevices() -> [Device] {
 
 func connect(_ d: Device) {
     let m = Mirror(d)
+    m.volume = run(["adb", "-s", d.serial, "shell", "cmd", "media_session", "volume", "--stream", "3", "--get"])
+        .components(separatedBy: "volume is ").dropFirst().first?.split(separator: " ").first.map(String.init)
     mirrors[d.serial] = m
     model.refresh()
     let cfg = NSWorkspace.OpenConfiguration()
@@ -100,6 +103,12 @@ NSWorkspace.shared.notificationCenter.addObserver(
     mirrors[m.device.serial] = nil
     m.bar?.close()
     model.refresh()
+    // 소리를 맥으로 보내는 동안 휴대폰 스피커 볼륨이 바뀌므로, 스피커로 돌아온 뒤 원래 볼륨으로 되돌린다
+    if let v = m.volume {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+            run(["adb", "-s", m.device.serial, "shell", "cmd", "media_session", "volume", "--stream", "3", "--set", v])
+        }
+    }
     let log = (try? String(contentsOfFile: logPath(m.device.serial), encoding: .utf8)) ?? ""
     if !m.stopping && log.contains("ERROR") {
         showConnectWindow("\(m.device.name) 연결 끊김: " + log.split(separator: "\n").suffix(2).joined(separator: " "))
