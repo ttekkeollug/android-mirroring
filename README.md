@@ -70,3 +70,6 @@ Ctrl+Space처럼 Mac 입력 소스를 바꾸는 단축키도 휴대폰에 같이
 | `Cmd+K` | 휴대폰의 물리 키보드 설정 열기 (자판 배열 설정) |
 
 전체 목록: [scrcpy shortcuts](https://github.com/Genymobile/scrcpy/blob/master/doc/shortcuts.md)
+
+## ☕ 개발자에게 커피 사주기
+마음에 드셨다면 [여기](https://chzzk.naver.com/live/61fd47147848ac0035788e31fe000090/chat?studio=true)에서 후원해 주세요. 큰 힘이 됩니다!
